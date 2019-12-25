@@ -22,15 +22,13 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.Buffer;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import kota_server.Socket_Receive;
-/**
- *
- * @author PC
- */
+import kota_server.Socket_Data;
+
 public class Socket_Server {
-    public Socket_Server() throws IOException{
+    public Socket_Server() throws IOException, SQLException{
         ServerSocket ss = new ServerSocket(9999);
         System.out.println("server up and ready for connections");
         while(true) {

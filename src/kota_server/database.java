@@ -26,18 +26,17 @@ public class database{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             this.cnn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/kota_chat?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
-            System.out.println("aaa");
+            //System.out.println("aaa");
             stm = cnn.createStatement();
             rss = stm.executeQuery("select * from info_user");
-            while(rss.next()){
-						
-                String username=rss.getString("Username");
-                String yob =rss.getString("Yob");						
-                String add= rss.getString("Address");
-                String acc= rss.getString("Account");
-                String pass= rss.getString("Password");
-                System.out.println(username+" "+yob+" "+add+" "+acc+" "+pass);
-            }
+//            while(rss.next()){				
+//                String username=rss.getString("Username");
+//                String yob =rss.getString("Yob");						
+//                String add= rss.getString("Address");
+//                String acc= rss.getString("Account");
+//                String pass= rss.getString("Password");
+//                System.out.println(username+" "+yob+" "+add+" "+acc+" "+pass);
+//            }
         } 
         catch (ClassNotFoundException ex) {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);

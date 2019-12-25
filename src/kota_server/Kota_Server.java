@@ -19,8 +19,8 @@ public class Kota_Server {
      */
     public static void main(String[] args) throws ClassNotFoundException, IOException, SQLException {
         // TODO code application logic here
-        //new Socket_Server();
-        new database();
+        new Socket_Server();
+        //new database();
     }
     
 }

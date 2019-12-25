@@ -11,15 +11,15 @@ import java.io.Serializable;
  *
  * @author PC
  */
-public class Socket_Receive implements Serializable{
+public class Socket_Data implements Serializable{
     private String[] data;
     private String action;
 
-    public Socket_Receive(String[] data) {
+    public Socket_Data(String[] data) {
         this.data = data;
     }
 
-    public Socket_Receive(String action) {
+    public Socket_Data(String action) {
         this.action = action;
     }
 
@@ -38,7 +38,7 @@ public class Socket_Receive implements Serializable{
     public void setAction(String action) {
         this.action = action;
     }
-    public Socket_Receive(){
+    public Socket_Data(){
         super();
     }
 }
