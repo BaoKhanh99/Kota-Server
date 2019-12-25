@@ -24,7 +24,7 @@ import java.net.Socket;
 import java.nio.Buffer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import kota_server.Infor_User;
+import kota_server.Socket_Receive;
 /**
  *
  * @author PC
