@@ -17,27 +17,30 @@ import java.util.logging.Logger;
  *
  * @author PC
  */
-public class database {
+public class database{
     Connection cnn;
     Statement stm ;
     ResultSet rss;
 
-    public database() {
+    public database() throws SQLException {
         try {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            this.cnn = (Connection) DriverManager.getConnection("jdbc:mysql//localhost:8080/kota_chat","root","");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            this.cnn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/kota_chat?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
+            System.out.println("aaa");
             stm = cnn.createStatement();
             rss = stm.executeQuery("select * from info_user");
             while(rss.next()){
-                System.out.println(rss.getString("Full_Name"));
+						
+                String username=rss.getString("Username");
+                String yob =rss.getString("Yob");						
+                String add= rss.getString("Address");
+                String acc= rss.getString("Account");
+                String pass= rss.getString("Password");
+                System.out.println(username+" "+yob+" "+add+" "+acc+" "+pass);
             }
-        } catch (SQLException ex) {
+        } 
+        catch (ClassNotFoundException ex) {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
+        }          
+    }   
 }

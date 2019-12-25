@@ -6,6 +6,7 @@
 package kota_server;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  *
@@ -16,10 +17,10 @@ public class Kota_Server {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws ClassNotFoundException, IOException {
+    public static void main(String[] args) throws ClassNotFoundException, IOException, SQLException {
         // TODO code application logic here
-        new Socket_Server();
-        //new database();
+        //new Socket_Server();
+        new database();
     }
     
 }
