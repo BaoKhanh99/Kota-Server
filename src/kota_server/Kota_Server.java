@@ -6,13 +6,14 @@
 package kota_server;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.sql.SQLException;
 
 /**
  *
  * @author PC
  */
-public class Kota_Server {
+public class Kota_Server implements Serializable{
 
     /**
      * @param args the command line arguments
